@@ -14,8 +14,13 @@ class gameloop
     bool running;    
     SDL_Event e;
 
-    int rowNum , colNum;
     int grid[30][30];
+
+    int rowNum = 20;
+    int colNum = 10;
+
+    SDL_Rect gridBoxes[20][10]; 
+    
     
 
 
@@ -27,7 +32,6 @@ class gameloop
 
     void gamerunning();
 
-    void grid();
-
     void drawgrid();
 };
+

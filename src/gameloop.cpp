@@ -31,18 +31,19 @@ void gameloop::gamerunning()
     }
 }
 
-void gameloop::grid()
-{
-    rowNum = 20;
-    colNum = 10;
-     
-}
+
 
 void gameloop::drawgrid()
 {
+
+    
     for(int i = 0 ; i < rowNum ; i++){
-        for(int j ; j < colNum ; j++){
-            grid[i][j] = 0 ; 
+        for(int j = 0; j < colNum ; j++){
+            grid[i][j] = 0 ;
+            gridBoxes[i][j].w = width/10;
+            gridBoxes[i][j].h = height/20;
+            SDL_SetRenderDrawColor(render , 255 , 255 , 255 , 255);
+            SDL_RenderDrawRect(render , &gridBoxes[i][j]); 
         }
     }
 }
