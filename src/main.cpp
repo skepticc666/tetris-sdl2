@@ -5,6 +5,8 @@
 
 int main(){
 
+
+   
    gameloop once;
    once.windowrender();
    once.gamerunning();

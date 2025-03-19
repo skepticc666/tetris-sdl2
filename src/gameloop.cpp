@@ -27,6 +27,8 @@ void gameloop::gamerunning()
         SDL_SetRenderDrawColor(render , 0 , 0 , 0 ,255);
         SDL_RenderClear(render);
 
+        drawgrid();
+
         SDL_RenderPresent(render);
     }
 }
@@ -37,13 +39,17 @@ void gameloop::drawgrid()
 {
 
     
+    
     for(int i = 0 ; i < rowNum ; i++){
         for(int j = 0; j < colNum ; j++){
-            grid[i][j] = 0 ;
+            // grid[i][j] = 0 ;
+            gridBoxes[i][j].x = i*gridBoxes[i][j].w;
+            gridBoxes[i][j].y = j*gridBoxes[i][j].h;
             gridBoxes[i][j].w = width/10;
             gridBoxes[i][j].h = height/20;
             SDL_SetRenderDrawColor(render , 255 , 255 , 255 , 255);
             SDL_RenderDrawRect(render , &gridBoxes[i][j]); 
+            // std::cout << "drawing" << std::endl;
         }
     }
 }
